@@ -1,0 +1,24 @@
+%TF.GenerationSoftware,KiCad,Pcbnew,8.0.6*%
+%TF.CreationDate,2024-11-04T13:00:15-03:00*%
+%TF.ProjectId,chaveiro-fritzenlab,63686176-6569-4726-9f2d-667269747a65,rev?*%
+%TF.SameCoordinates,Original*%
+%TF.FileFunction,Paste,Bot*%
+%TF.FilePolarity,Positive*%
+%FSLAX46Y46*%
+G04 Gerber Fmt 4.6, Leading zero omitted, Abs format (unit mm)*
+G04 Created by KiCad (PCBNEW 8.0.6) date 2024-11-04 13:00:15*
+%MOMM*%
+%LPD*%
+G01*
+G04 APERTURE LIST*
+%ADD10R,5.000000X5.000000*%
+%ADD11R,4.000000X4.000000*%
+G04 APERTURE END LIST*
+D10*
+%TO.C,BT1*%
+X138350000Y-79000000D03*
+X112450000Y-79000000D03*
+D11*
+X125400000Y-79000000D03*
+%TD*%
+M02*
