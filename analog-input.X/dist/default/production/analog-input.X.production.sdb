@@ -1,0 +1,102 @@
+[p GLOBOPT AUTOSTATIC IEEE_DBL IEEE_FLT PIC14 PICREGULAR PICMID ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 12F675 ]
+[d frameptr 0 ]
+"5 C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
+"10 C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\sprcadd.c
+[v ___fladd __fladd `(d  1 e 4 0 ]
+"15 C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\Umul16.c
+[v ___wmul __wmul `(ui  1 e 2 0 ]
+"4 C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\Umul8_16.c
+[v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
+"6 C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\pic\__eeprom.c
+[v ___eecpymem __eecpymem `(v  1 e 1 0 ]
+"39
+[v ___memcpyee __memcpyee `(v  1 e 1 0 ]
+"33 C:\Users\Clovisf\Documents\GitHub\chaveiro-fritzenlab\analog-input.X\main.c
+[v _isr isr `II(v  1 e 1 0 ]
+"97
+[v _main main `(v  1 e 1 0 ]
+"72 D:/Installations/packs/Microchip/PIC10-12Fxxx_DFP/1.7.178/xc8\pic\include\proc\pic12f675.h
+[v _TMR0 TMR0 `VEuc  1 e 1 @1 ]
+"326
+[v _INTCON INTCON `VEuc  1 e 1 @11 ]
+"564
+[v _CMCON CMCON `VEuc  1 e 1 @25 ]
+"623
+[v _ADRESH ADRESH `VEuc  1 e 1 @30 ]
+"643
+[v _ADCON0 ADCON0 `VEuc  1 e 1 @31 ]
+"727
+[v _OPTION_REG OPTION_REG `VEuc  1 e 1 @129 ]
+"797
+[v _TRISIO TRISIO `VEuc  1 e 1 @133 ]
+"929
+[v _OSCCAL OSCCAL `VEuc  1 e 1 @144 ]
+"989
+[v _WPU WPU `VEuc  1 e 1 @149 ]
+"1384
+[v _ADRESL ADRESL `VEuc  1 e 1 @158 ]
+"1404
+[v _ANSEL ANSEL `VEuc  1 e 1 @159 ]
+"1502
+[v _ADON ADON `VEb  1 e 0 @248 ]
+"1586
+[v _GO_nDONE GO_nDONE `VEb  1 e 0 @249 ]
+"1589
+[v _GP0 GP0 `VEb  1 e 0 @40 ]
+"1592
+[v _GP1 GP1 `VEb  1 e 0 @41 ]
+"1733
+[v _TMR0IF TMR0IF `VEb  1 e 0 @90 ]
+"24 C:\Users\Clovisf\Documents\GitHub\chaveiro-fritzenlab\analog-input.X\main.c
+[v _counter counter `VEuc  1 e 1 0 ]
+"25
+[v _reading reading `VEi  1 e 2 0 ]
+"26
+[v _voltage voltage `VEui  1 e 2 0 ]
+"27
+[v _readAndDecide readAndDecide `VEuc  1 e 1 0 ]
+"28
+[v _tens tens `VEi  1 e 2 0 ]
+"29
+[v _units units `VEi  1 e 2 0 ]
+"30
+[v _executeTens executeTens `VEuc  1 e 1 0 ]
+"31
+[v _executeUnits executeUnits `VEuc  1 e 1 0 ]
+"97
+[v _main main `(v  1 e 1 0 ]
+{
+"120
+} 0
+"33
+[v _isr isr `II(v  1 e 1 0 ]
+{
+"93
+} 0
+"15 C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\Umul16.c
+[v ___wmul __wmul `(ui  1 e 2 0 ]
+{
+"17
+[v ___wmul@product product `ui  1 a 2 4 ]
+"15
+[v ___wmul@multiplier multiplier `ui  1 p 2 0 ]
+[v ___wmul@multiplicand multiplicand `ui  1 p 2 2 ]
+"53
+} 0
+"5 C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
+{
+"10
+[v ___awdiv@quotient quotient `i  1 a 2 12 ]
+"11
+[v ___awdiv@sign sign `uc  1 a 1 11 ]
+[v ___awdiv@counter counter `uc  1 a 1 10 ]
+"5
+[v ___awdiv@divisor divisor `i  1 p 2 6 ]
+[v ___awdiv@dividend dividend `i  1 p 2 8 ]
+"41
+} 0

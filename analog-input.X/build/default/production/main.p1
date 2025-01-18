@@ -1,0 +1,457 @@
+Version 4.0 HI-TECH Software Intermediate Code
+[t ~ __interrupt . k ]
+[t T1 __interrupt ]
+"1586 D:/Installations/packs/Microchip/PIC10-12Fxxx_DFP/1.7.178/xc8\pic\include\proc\pic12f675.h
+[; ;D:/Installations/packs/Microchip/PIC10-12Fxxx_DFP/1.7.178/xc8\pic\include\proc\pic12f675.h: 1586: extern volatile __bit GO_nDONE __attribute__((address(0xF9)));
+[v _GO_nDONE `Vb ~T0 @X0 0 e@249 ]
+"623
+[; ;D:/Installations/packs/Microchip/PIC10-12Fxxx_DFP/1.7.178/xc8\pic\include\proc\pic12f675.h: 623: extern volatile unsigned char ADRESH __attribute__((address(0x01E)));
+[v _ADRESH `Vuc ~T0 @X0 0 e@30 ]
+"1384
+[; ;D:/Installations/packs/Microchip/PIC10-12Fxxx_DFP/1.7.178/xc8\pic\include\proc\pic12f675.h: 1384: extern volatile unsigned char ADRESL __attribute__((address(0x09E)));
+[v _ADRESL `Vuc ~T0 @X0 0 e@158 ]
+"1589
+[; ;D:/Installations/packs/Microchip/PIC10-12Fxxx_DFP/1.7.178/xc8\pic\include\proc\pic12f675.h: 1589: extern volatile __bit GP0 __attribute__((address(0x28)));
+[v _GP0 `Vb ~T0 @X0 0 e@40 ]
+"1592
+[; ;D:/Installations/packs/Microchip/PIC10-12Fxxx_DFP/1.7.178/xc8\pic\include\proc\pic12f675.h: 1592: extern volatile __bit GP1 __attribute__((address(0x29)));
+[v _GP1 `Vb ~T0 @X0 0 e@41 ]
+"1733
+[; ;D:/Installations/packs/Microchip/PIC10-12Fxxx_DFP/1.7.178/xc8\pic\include\proc\pic12f675.h: 1733: extern volatile __bit TMR0IF __attribute__((address(0x5A)));
+[v _TMR0IF `Vb ~T0 @X0 0 e@90 ]
+"72
+[; ;D:/Installations/packs/Microchip/PIC10-12Fxxx_DFP/1.7.178/xc8\pic\include\proc\pic12f675.h: 72: extern volatile unsigned char TMR0 __attribute__((address(0x001)));
+[v _TMR0 `Vuc ~T0 @X0 0 e@1 ]
+[p mainexit ]
+"797
+[; ;D:/Installations/packs/Microchip/PIC10-12Fxxx_DFP/1.7.178/xc8\pic\include\proc\pic12f675.h: 797: extern volatile unsigned char TRISIO __attribute__((address(0x085)));
+[v _TRISIO `Vuc ~T0 @X0 0 e@133 ]
+"564
+[; ;D:/Installations/packs/Microchip/PIC10-12Fxxx_DFP/1.7.178/xc8\pic\include\proc\pic12f675.h: 564: extern volatile unsigned char CMCON __attribute__((address(0x019)));
+[v _CMCON `Vuc ~T0 @X0 0 e@25 ]
+"1404
+[; ;D:/Installations/packs/Microchip/PIC10-12Fxxx_DFP/1.7.178/xc8\pic\include\proc\pic12f675.h: 1404: extern volatile unsigned char ANSEL __attribute__((address(0x09F)));
+[v _ANSEL `Vuc ~T0 @X0 0 e@159 ]
+"643
+[; ;D:/Installations/packs/Microchip/PIC10-12Fxxx_DFP/1.7.178/xc8\pic\include\proc\pic12f675.h: 643: extern volatile unsigned char ADCON0 __attribute__((address(0x01F)));
+[v _ADCON0 `Vuc ~T0 @X0 0 e@31 ]
+"1502
+[; ;D:/Installations/packs/Microchip/PIC10-12Fxxx_DFP/1.7.178/xc8\pic\include\proc\pic12f675.h: 1502: extern volatile __bit ADON __attribute__((address(0xF8)));
+[v _ADON `Vb ~T0 @X0 0 e@248 ]
+"989
+[; ;D:/Installations/packs/Microchip/PIC10-12Fxxx_DFP/1.7.178/xc8\pic\include\proc\pic12f675.h: 989: extern volatile unsigned char WPU __attribute__((address(0x095)));
+[v _WPU `Vuc ~T0 @X0 0 e@149 ]
+"929
+[; ;D:/Installations/packs/Microchip/PIC10-12Fxxx_DFP/1.7.178/xc8\pic\include\proc\pic12f675.h: 929: extern volatile unsigned char OSCCAL __attribute__((address(0x090)));
+[v _OSCCAL `Vuc ~T0 @X0 0 e@144 ]
+"727
+[; ;D:/Installations/packs/Microchip/PIC10-12Fxxx_DFP/1.7.178/xc8\pic\include\proc\pic12f675.h: 727: extern volatile unsigned char OPTION_REG __attribute__((address(0x081)));
+[v _OPTION_REG `Vuc ~T0 @X0 0 e@129 ]
+"326
+[; ;D:/Installations/packs/Microchip/PIC10-12Fxxx_DFP/1.7.178/xc8\pic\include\proc\pic12f675.h: 326: extern volatile unsigned char INTCON __attribute__((address(0x00B)));
+[v _INTCON `Vuc ~T0 @X0 0 e@11 ]
+"54 D:/Installations/packs/Microchip/PIC10-12Fxxx_DFP/1.7.178/xc8\pic\include\proc\pic12f675.h
+[; ;D:/Installations/packs/Microchip/PIC10-12Fxxx_DFP/1.7.178/xc8\pic\include\proc\pic12f675.h: 54: __asm("INDF equ 00h");
+[; <" INDF equ 00h ;# ">
+"74
+[; ;D:/Installations/packs/Microchip/PIC10-12Fxxx_DFP/1.7.178/xc8\pic\include\proc\pic12f675.h: 74: __asm("TMR0 equ 01h");
+[; <" TMR0 equ 01h ;# ">
+"94
+[; ;D:/Installations/packs/Microchip/PIC10-12Fxxx_DFP/1.7.178/xc8\pic\include\proc\pic12f675.h: 94: __asm("PCL equ 02h");
+[; <" PCL equ 02h ;# ">
+"114
+[; ;D:/Installations/packs/Microchip/PIC10-12Fxxx_DFP/1.7.178/xc8\pic\include\proc\pic12f675.h: 114: __asm("STATUS equ 03h");
+[; <" STATUS equ 03h ;# ">
+"200
+[; ;D:/Installations/packs/Microchip/PIC10-12Fxxx_DFP/1.7.178/xc8\pic\include\proc\pic12f675.h: 200: __asm("FSR equ 04h");
+[; <" FSR equ 04h ;# ">
+"220
+[; ;D:/Installations/packs/Microchip/PIC10-12Fxxx_DFP/1.7.178/xc8\pic\include\proc\pic12f675.h: 220: __asm("GPIO equ 05h");
+[; <" GPIO equ 05h ;# ">
+"308
+[; ;D:/Installations/packs/Microchip/PIC10-12Fxxx_DFP/1.7.178/xc8\pic\include\proc\pic12f675.h: 308: __asm("PCLATH equ 0Ah");
+[; <" PCLATH equ 0Ah ;# ">
+"328
+[; ;D:/Installations/packs/Microchip/PIC10-12Fxxx_DFP/1.7.178/xc8\pic\include\proc\pic12f675.h: 328: __asm("INTCON equ 0Bh");
+[; <" INTCON equ 0Bh ;# ">
+"406
+[; ;D:/Installations/packs/Microchip/PIC10-12Fxxx_DFP/1.7.178/xc8\pic\include\proc\pic12f675.h: 406: __asm("PIR1 equ 0Ch");
+[; <" PIR1 equ 0Ch ;# ">
+"454
+[; ;D:/Installations/packs/Microchip/PIC10-12Fxxx_DFP/1.7.178/xc8\pic\include\proc\pic12f675.h: 454: __asm("TMR1 equ 0Eh");
+[; <" TMR1 equ 0Eh ;# ">
+"461
+[; ;D:/Installations/packs/Microchip/PIC10-12Fxxx_DFP/1.7.178/xc8\pic\include\proc\pic12f675.h: 461: __asm("TMR1L equ 0Eh");
+[; <" TMR1L equ 0Eh ;# ">
+"481
+[; ;D:/Installations/packs/Microchip/PIC10-12Fxxx_DFP/1.7.178/xc8\pic\include\proc\pic12f675.h: 481: __asm("TMR1H equ 0Fh");
+[; <" TMR1H equ 0Fh ;# ">
+"501
+[; ;D:/Installations/packs/Microchip/PIC10-12Fxxx_DFP/1.7.178/xc8\pic\include\proc\pic12f675.h: 501: __asm("T1CON equ 010h");
+[; <" T1CON equ 010h ;# ">
+"566
+[; ;D:/Installations/packs/Microchip/PIC10-12Fxxx_DFP/1.7.178/xc8\pic\include\proc\pic12f675.h: 566: __asm("CMCON equ 019h");
+[; <" CMCON equ 019h ;# ">
+"625
+[; ;D:/Installations/packs/Microchip/PIC10-12Fxxx_DFP/1.7.178/xc8\pic\include\proc\pic12f675.h: 625: __asm("ADRESH equ 01Eh");
+[; <" ADRESH equ 01Eh ;# ">
+"645
+[; ;D:/Installations/packs/Microchip/PIC10-12Fxxx_DFP/1.7.178/xc8\pic\include\proc\pic12f675.h: 645: __asm("ADCON0 equ 01Fh");
+[; <" ADCON0 equ 01Fh ;# ">
+"729
+[; ;D:/Installations/packs/Microchip/PIC10-12Fxxx_DFP/1.7.178/xc8\pic\include\proc\pic12f675.h: 729: __asm("OPTION_REG equ 081h");
+[; <" OPTION_REG equ 081h ;# ">
+"799
+[; ;D:/Installations/packs/Microchip/PIC10-12Fxxx_DFP/1.7.178/xc8\pic\include\proc\pic12f675.h: 799: __asm("TRISIO equ 085h");
+[; <" TRISIO equ 085h ;# ">
+"849
+[; ;D:/Installations/packs/Microchip/PIC10-12Fxxx_DFP/1.7.178/xc8\pic\include\proc\pic12f675.h: 849: __asm("PIE1 equ 08Ch");
+[; <" PIE1 equ 08Ch ;# ">
+"897
+[; ;D:/Installations/packs/Microchip/PIC10-12Fxxx_DFP/1.7.178/xc8\pic\include\proc\pic12f675.h: 897: __asm("PCON equ 08Eh");
+[; <" PCON equ 08Eh ;# ">
+"931
+[; ;D:/Installations/packs/Microchip/PIC10-12Fxxx_DFP/1.7.178/xc8\pic\include\proc\pic12f675.h: 931: __asm("OSCCAL equ 090h");
+[; <" OSCCAL equ 090h ;# ">
+"991
+[; ;D:/Installations/packs/Microchip/PIC10-12Fxxx_DFP/1.7.178/xc8\pic\include\proc\pic12f675.h: 991: __asm("WPU equ 095h");
+[; <" WPU equ 095h ;# ">
+"1036
+[; ;D:/Installations/packs/Microchip/PIC10-12Fxxx_DFP/1.7.178/xc8\pic\include\proc\pic12f675.h: 1036: __asm("IOC equ 096h");
+[; <" IOC equ 096h ;# ">
+"1041
+[; ;D:/Installations/packs/Microchip/PIC10-12Fxxx_DFP/1.7.178/xc8\pic\include\proc\pic12f675.h: 1041: __asm("IOCB equ 096h");
+[; <" IOCB equ 096h ;# ">
+"1210
+[; ;D:/Installations/packs/Microchip/PIC10-12Fxxx_DFP/1.7.178/xc8\pic\include\proc\pic12f675.h: 1210: __asm("VRCON equ 099h");
+[; <" VRCON equ 099h ;# ">
+"1270
+[; ;D:/Installations/packs/Microchip/PIC10-12Fxxx_DFP/1.7.178/xc8\pic\include\proc\pic12f675.h: 1270: __asm("EEDATA equ 09Ah");
+[; <" EEDATA equ 09Ah ;# ">
+"1275
+[; ;D:/Installations/packs/Microchip/PIC10-12Fxxx_DFP/1.7.178/xc8\pic\include\proc\pic12f675.h: 1275: __asm("EEDAT equ 09Ah");
+[; <" EEDAT equ 09Ah ;# ">
+"1308
+[; ;D:/Installations/packs/Microchip/PIC10-12Fxxx_DFP/1.7.178/xc8\pic\include\proc\pic12f675.h: 1308: __asm("EEADR equ 09Bh");
+[; <" EEADR equ 09Bh ;# ">
+"1328
+[; ;D:/Installations/packs/Microchip/PIC10-12Fxxx_DFP/1.7.178/xc8\pic\include\proc\pic12f675.h: 1328: __asm("EECON1 equ 09Ch");
+[; <" EECON1 equ 09Ch ;# ">
+"1366
+[; ;D:/Installations/packs/Microchip/PIC10-12Fxxx_DFP/1.7.178/xc8\pic\include\proc\pic12f675.h: 1366: __asm("EECON2 equ 09Dh");
+[; <" EECON2 equ 09Dh ;# ">
+"1386
+[; ;D:/Installations/packs/Microchip/PIC10-12Fxxx_DFP/1.7.178/xc8\pic\include\proc\pic12f675.h: 1386: __asm("ADRESL equ 09Eh");
+[; <" ADRESL equ 09Eh ;# ">
+"1406
+[; ;D:/Installations/packs/Microchip/PIC10-12Fxxx_DFP/1.7.178/xc8\pic\include\proc\pic12f675.h: 1406: __asm("ANSEL equ 09Fh");
+[; <" ANSEL equ 09Fh ;# ">
+"15 main.c
+[; ;main.c: 15: 
+[p x FOSC  =  INTRCIO    ]
+"16
+[; ;main.c: 16:         GO_nDONE= 1;
+[p x WDTE  =  OFF        ]
+"17
+[; ;main.c: 17: 
+[p x PWRTE  =  ON        ]
+"18
+[; ;main.c: 18:         while(GO_nDONE);
+[p x MCLRE  =  OFF       ]
+"19
+[; ;main.c: 19:         reading = ((ADRESH<<8)+ADRESL);
+[p x BOREN  =  OFF       ]
+"20
+[; ;main.c: 20:         voltage = (reading * 50) / 1024;
+[p x CP  =  OFF          ]
+"21
+[; ;main.c: 21: 
+[p x CPD  =  OFF          ]
+"24
+[; ;main.c: 24:             executeTens= 1;
+[v _counter `Vuc ~T0 @X0 1 e ]
+[i _counter
+-> -> 0 `i `uc
+]
+"25
+[; ;main.c: 25:             executeUnits= 0;
+[v _reading `Vi ~T0 @X0 1 e ]
+[i _reading
+-> 0 `i
+]
+"26
+[; ;main.c: 26:             if(voltage >= 40){
+[v _voltage `Vui ~T0 @X0 1 e ]
+[i _voltage
+-> -> 0 `i `ui
+]
+"27
+[; ;main.c: 27:             tens= 4;
+[v _readAndDecide `Vuc ~T0 @X0 1 e ]
+[i _readAndDecide
+-> -> 1 `i `uc
+]
+"28
+[; ;main.c: 28:             units= voltage - 40;
+[v _tens `Vi ~T0 @X0 1 e ]
+[i _tens
+-> 0 `i
+]
+"29
+[; ;main.c: 29:             }else if(voltage >= 30){
+[v _units `Vi ~T0 @X0 1 e ]
+[i _units
+-> 0 `i
+]
+"30
+[; ;main.c: 30:                 tens= 3;
+[v _executeTens `Vuc ~T0 @X0 1 e ]
+[i _executeTens
+-> -> 0 `i `uc
+]
+"31
+[; ;main.c: 31:                 units= voltage - 30;
+[v _executeUnits `Vuc ~T0 @X0 1 e ]
+[i _executeUnits
+-> -> 0 `i `uc
+]
+[v $root$_isr `(v ~T0 @X0 0 e ]
+"33
+[; ;main.c: 33:                 tens= 2;
+[v _isr `(v ~T1 @X0 1 ef ]
+"34
+[; ;main.c: 34:                 units= voltage - 20;
+{
+[e :U _isr ]
+[f ]
+"35
+[; ;main.c: 35:             }else if(voltage >= 10){
+[e ++ _counter -> -> 1 `i `Vuc ]
+"36
+[; ;main.c: 36:                 tens= 1;
+[e $ ! == -> _counter `i -> 2 `i 88  ]
+{
+"37
+[; ;main.c: 37:                 units= voltage - 10;
+[e = _counter -> -> 0 `i `uc ]
+"39
+[; ;main.c: 39:                 tens= 0;
+[e = _GO_nDONE -> -> 1 `i `b ]
+"41
+[; ;main.c: 41:             }
+[e $U 89  ]
+[e :U 90 ]
+[e :U 89 ]
+[e $ _GO_nDONE 90  ]
+[e :U 91 ]
+"42
+[; ;main.c: 42:             tens= tens * 2;
+[e = _reading + << -> _ADRESH `i -> 8 `i -> _ADRESL `i ]
+"43
+[; ;main.c: 43:             units= units * 2;
+[e = _voltage -> / * _reading -> 50 `i -> 1024 `i `ui ]
+"45
+[; ;main.c: 45: 
+[e $ ! == -> _readAndDecide `i -> 1 `i 92  ]
+{
+"46
+[; ;main.c: 46:             GP0= ~GP0;
+[e = _readAndDecide -> -> 0 `i `uc ]
+"47
+[; ;main.c: 47:             if(tens < 1){
+[e = _executeTens -> -> 1 `i `uc ]
+"48
+[; ;main.c: 48:                 executeTens= 0;
+[e = _executeUnits -> -> 0 `i `uc ]
+"49
+[; ;main.c: 49:                 executeUnits= 1;
+[e $ ! >= _voltage -> -> 40 `i `ui 93  ]
+{
+"50
+[; ;main.c: 50:             }
+[e = _tens -> 4 `i ]
+"51
+[; ;main.c: 51:             tens--;
+[e = _units -> - _voltage -> -> 40 `i `ui `i ]
+"52
+[; ;main.c: 52:         }else if(executeUnits == 1){
+}
+[e $U 94  ]
+[e :U 93 ]
+[e $ ! >= _voltage -> -> 30 `i `ui 95  ]
+{
+"53
+[; ;main.c: 53: 
+[e = _tens -> 3 `i ]
+"54
+[; ;main.c: 54:             GP1= ~GP1;
+[e = _units -> - _voltage -> -> 30 `i `ui `i ]
+"55
+[; ;main.c: 55:             if(units < 1){
+}
+[e $U 96  ]
+[e :U 95 ]
+[e $ ! >= _voltage -> -> 20 `i `ui 97  ]
+{
+"56
+[; ;main.c: 56:                 executeTens= 0;
+[e = _tens -> 2 `i ]
+"57
+[; ;main.c: 57:                 executeUnits= 0;
+[e = _units -> - _voltage -> -> 20 `i `ui `i ]
+"58
+[; ;main.c: 58:                 readAndDecide= 1;
+}
+[e $U 98  ]
+[e :U 97 ]
+[e $ ! >= _voltage -> -> 10 `i `ui 99  ]
+{
+"59
+[; ;main.c: 59:             }
+[e = _tens -> 1 `i ]
+"60
+[; ;main.c: 60:             units--;
+[e = _units -> - _voltage -> -> 10 `i `ui `i ]
+"61
+[; ;main.c: 61:         }
+}
+[e $U 100  ]
+[e :U 99 ]
+{
+"62
+[; ;main.c: 62: 
+[e = _tens -> 0 `i ]
+"63
+[; ;main.c: 63: 
+[e = _units -> _voltage `i ]
+"64
+[; ;main.c: 64: 
+}
+[e :U 100 ]
+[e :U 98 ]
+[e :U 96 ]
+[e :U 94 ]
+"65
+[; ;main.c: 65: 
+[e = _tens * _tens -> 2 `i ]
+"66
+[; ;main.c: 66:     }
+[e = _units * _units -> 2 `i ]
+"67
+[; ;main.c: 67: 
+}
+[e $U 101  ]
+[e :U 92 ]
+[e $ ! == -> _executeTens `i -> 1 `i 102  ]
+{
+"69
+[; ;main.c: 69:     TMR0 = 0;
+[e = _GP0 -> ~ -> _GP0 `ui `b ]
+"70
+[; ;main.c: 70: }
+[e $ ! < _tens -> 1 `i 103  ]
+{
+"71
+[; ;main.c: 71: 
+[e = _executeTens -> -> 0 `i `uc ]
+"72
+[; ;main.c: 72: 
+[e = _executeUnits -> -> 1 `i `uc ]
+"73
+[; ;main.c: 73: 
+}
+[e :U 103 ]
+"74
+[; ;main.c: 74: void main(void) {
+[e -- _tens -> -> 1 `i `Vi ]
+"75
+[; ;main.c: 75:     TRISIO = 0b010100;
+}
+[e $U 104  ]
+[e :U 102 ]
+[e $ ! == -> _executeUnits `i -> 1 `i 105  ]
+{
+"77
+[; ;main.c: 77:     ANSEL = 0b00011100;
+[e = _GP1 -> ~ -> _GP1 `ui `b ]
+"78
+[; ;main.c: 78:     ADCON0=0b00001001;
+[e $ ! < _units -> 1 `i 106  ]
+{
+"79
+[; ;main.c: 79: 
+[e = _executeTens -> -> 0 `i `uc ]
+"80
+[; ;main.c: 80:     ADON=1;
+[e = _executeUnits -> -> 0 `i `uc ]
+"81
+[; ;main.c: 81:     WPU = 0X00;
+[e = _readAndDecide -> -> 1 `i `uc ]
+"82
+[; ;main.c: 82:     TMR0 = 0;
+}
+[e :U 106 ]
+"83
+[; ;main.c: 83:     OSCCAL = 0b11111111;
+[e -- _units -> -> 1 `i `Vi ]
+"84
+[; ;main.c: 84:     OPTION_REG = 0b10000111;
+}
+[e :U 105 ]
+[e :U 104 ]
+[e :U 101 ]
+"89
+[; ;main.c: 89:     GP1= 1;
+}
+[e :U 88 ]
+"91
+[; ;main.c: 91:     while(1)
+[e = _TMR0IF -> -> 0 `i `b ]
+"92
+[; ;main.c: 92:     {
+[e = _TMR0 -> -> 0 `i `uc ]
+"93
+[; ;main.c: 93: 
+[e :UE 87 ]
+}
+[v $root$_main `(v ~T0 @X0 0 e ]
+"97
+[; ;main.c: 97: }
+[v _main `(v ~T0 @X0 1 ef ]
+{
+[e :U _main ]
+[f ]
+"98
+[e = _TRISIO -> -> 20 `i `uc ]
+"99
+[e = _CMCON -> -> 7 `i `uc ]
+"100
+[e = _ANSEL -> -> 28 `i `uc ]
+"101
+[e = _ADCON0 -> -> 9 `i `uc ]
+"103
+[e = _ADON -> -> 1 `i `b ]
+"104
+[e = _WPU -> -> 0 `i `uc ]
+"105
+[e = _TMR0 -> -> 0 `i `uc ]
+"106
+[e = _OSCCAL -> -> 255 `i `uc ]
+"107
+[e = _OPTION_REG -> -> 135 `i `uc ]
+"108
+[e = _INTCON -> -> 224 `i `uc ]
+"112
+[e = _GP1 -> -> 1 `i `b ]
+"114
+[e :U 109 ]
+"115
+{
+"118
+}
+[e :U 108 ]
+[e $U 109  ]
+[e :U 110 ]
+"120
+[e :UE 107 ]
+}
