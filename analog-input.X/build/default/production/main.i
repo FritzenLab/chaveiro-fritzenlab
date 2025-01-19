@@ -1726,22 +1726,25 @@ volatile uint8_t executeUnits= 0;
 void __attribute__((picinterrupt(("")))) isr()
 {
     counter++;
-    if(counter == 2){
+    if(counter == 4){
         counter= 0;
-
-        GO_nDONE= 1;
-
-        while(GO_nDONE);
-        reading = ((ADRESH<<8)+ADRESL);
-        voltage = (reading * 50) / 1024;
 
         if(readAndDecide == 1){
             readAndDecide= 0;
             executeTens= 1;
             executeUnits= 0;
+
+            GO_nDONE= 1;
+            while(GO_nDONE);
+            reading = ((ADRESH<<8)+ADRESL);
+
+
+            voltage = (-20*((reading * 5) / 1024))+75;
+
+
             if(voltage >= 40){
-            tens= 4;
-            units= voltage - 40;
+                tens= 4;
+                units= voltage - 40;
             }else if(voltage >= 30){
                 tens= 3;
                 units= voltage - 30;
@@ -1758,22 +1761,32 @@ void __attribute__((picinterrupt(("")))) isr()
             tens= tens * 2;
             units= units * 2;
         }else if(executeTens == 1){
-
-            GP0= ~GP0;
+            tens--;
+            GP1= 0;
+            if(GP0){
+                GP0= 0;
+            }else{
+                GP0= 1;
+            }
             if(tens < 1){
                 executeTens= 0;
                 executeUnits= 1;
             }
-            tens--;
-        }else if(executeUnits == 1){
 
-            GP1= ~GP1;
+        }else if(executeUnits == 1){
+            GP0= 0;
+            units--;
+            if(GP1){
+                GP1= 0;
+            }else{
+                GP1= 1;
+            }
             if(units < 1){
                 executeTens= 0;
                 executeUnits= 0;
                 readAndDecide= 1;
             }
-            units--;
+
         }
 
 
@@ -1791,7 +1804,7 @@ void main(void) {
     TRISIO = 0b010100;
     CMCON = 7;
     ANSEL = 0b00011100;
-    ADCON0=0b00001001;
+    ADCON0=0b10001001;
 
     ADON=1;
     WPU = 0X00;
@@ -1802,7 +1815,7 @@ void main(void) {
 
 
 
-    GP1= 1;
+
 
     while(1)
     {

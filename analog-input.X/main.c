@@ -33,22 +33,25 @@ volatile uint8_t executeUnits= 0;
 void __interrupt() isr()//interrupt vector
 {   
     counter++;
-    if(counter == 2){
+    if(counter == 4){
         counter= 0;
-        
-        GO_nDONE= 1;
-        
-        while(GO_nDONE);
-        reading = ((ADRESH<<8)+ADRESL); 
-        voltage = (reading * 50) / 1024; // 0-50 instead of 0-5 (v))
         
         if(readAndDecide == 1){
             readAndDecide= 0;
             executeTens= 1;
             executeUnits= 0;
+            
+            GO_nDONE= 1;        
+            while(GO_nDONE);
+            reading = ((ADRESH<<8)+ADRESL); 
+            // 5V supply temperature equation= (-19.784*V)+75.304
+            // 3V supply temperature equation= (-32.974*V)+75.304
+            voltage = (-20*((reading * 5) / 1024))+75; // if you want to show voltage, substitute 5 by 50
+            
+            
             if(voltage >= 40){
-            tens= 4;
-            units= voltage - 40;
+                tens= 4;
+                units= voltage - 40;
             }else if(voltage >= 30){
                 tens= 3;
                 units= voltage - 30;
@@ -65,22 +68,32 @@ void __interrupt() isr()//interrupt vector
             tens= tens * 2;
             units= units * 2;
         }else if(executeTens == 1){
-            
-            LED1= ~LED1;
+            tens--;
+            LED2= 0;
+            if(LED1){
+                LED1= 0;
+            }else{
+                LED1= 1;
+            }
             if(tens < 1){
                 executeTens= 0;
                 executeUnits= 1;
             }
-            tens--;
-        }else if(executeUnits == 1){
             
-            LED2= ~LED2;
+        }else if(executeUnits == 1){
+            LED1= 0;
+            units--;
+            if(LED2){
+                LED2= 0;
+            }else{
+                LED2= 1;
+            }
             if(units < 1){
                 executeTens= 0;
                 executeUnits= 0;
                 readAndDecide= 1;
             }
-            units--;
+            
         }
         
         
@@ -95,10 +108,10 @@ void __interrupt() isr()//interrupt vector
 
 //////////////////////////////////////////////////////Main routine///////////////////////////////////////////////////////////////
 void main(void) {
-    TRISIO = 0b010100;// all outputs
+    TRISIO = 0b010100;// GP2 and GP4 analog inputs
     CMCON = 7;// disable comparators
     ANSEL = 0b00011100;// AN2 and AN3 as analog inputs  
-    ADCON0=0b00001001; // AN2, right justified, VDD as ref
+    ADCON0=0b10001001; // AN2, right justified, VDD as ref
     //ADCON0=0b10001101; // AN3, right justified, VDD as ref
     ADON=1; // Enable ADC
     WPU = 0X00;// pull ups disabled
@@ -109,7 +122,7 @@ void main(void) {
     
     
     
-    LED2= 1;
+   
     
     while(1)
     {

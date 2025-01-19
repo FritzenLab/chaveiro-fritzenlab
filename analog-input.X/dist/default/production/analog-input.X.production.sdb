@@ -17,7 +17,7 @@
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
 "33 C:\Users\Clovisf\Documents\GitHub\chaveiro-fritzenlab\analog-input.X\main.c
 [v _isr isr `II(v  1 e 1 0 ]
-"97
+"110
 [v _main main `(v  1 e 1 0 ]
 "72 D:/Installations/packs/Microchip/PIC10-12Fxxx_DFP/1.7.178/xc8\pic\include\proc\pic12f675.h
 [v _TMR0 TMR0 `VEuc  1 e 1 @1 ]
@@ -67,15 +67,15 @@
 [v _executeTens executeTens `VEuc  1 e 1 0 ]
 "31
 [v _executeUnits executeUnits `VEuc  1 e 1 0 ]
-"97
+"110
 [v _main main `(v  1 e 1 0 ]
 {
-"120
+"133
 } 0
 "33
 [v _isr isr `II(v  1 e 1 0 ]
 {
-"93
+"106
 } 0
 "15 C:\Program Files\Microchip\xc8\v2.46\pic\sources\c99\common\Umul16.c
 [v ___wmul __wmul `(ui  1 e 2 0 ]

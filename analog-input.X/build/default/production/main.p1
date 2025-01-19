@@ -10,12 +10,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 "1384
 [; ;D:/Installations/packs/Microchip/PIC10-12Fxxx_DFP/1.7.178/xc8\pic\include\proc\pic12f675.h: 1384: extern volatile unsigned char ADRESL __attribute__((address(0x09E)));
 [v _ADRESL `Vuc ~T0 @X0 0 e@158 ]
-"1589
-[; ;D:/Installations/packs/Microchip/PIC10-12Fxxx_DFP/1.7.178/xc8\pic\include\proc\pic12f675.h: 1589: extern volatile __bit GP0 __attribute__((address(0x28)));
-[v _GP0 `Vb ~T0 @X0 0 e@40 ]
 "1592
 [; ;D:/Installations/packs/Microchip/PIC10-12Fxxx_DFP/1.7.178/xc8\pic\include\proc\pic12f675.h: 1592: extern volatile __bit GP1 __attribute__((address(0x29)));
 [v _GP1 `Vb ~T0 @X0 0 e@41 ]
+"1589
+[; ;D:/Installations/packs/Microchip/PIC10-12Fxxx_DFP/1.7.178/xc8\pic\include\proc\pic12f675.h: 1589: extern volatile __bit GP0 __attribute__((address(0x28)));
+[v _GP0 `Vb ~T0 @X0 0 e@40 ]
 "1733
 [; ;D:/Installations/packs/Microchip/PIC10-12Fxxx_DFP/1.7.178/xc8\pic\include\proc\pic12f675.h: 1733: extern volatile __bit TMR0IF __attribute__((address(0x5A)));
 [v _TMR0IF `Vb ~T0 @X0 0 e@90 ]
@@ -150,308 +150,346 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 15: 
 [p x FOSC  =  INTRCIO    ]
 "16
-[; ;main.c: 16:         GO_nDONE= 1;
+[; ;main.c: 16:         if(readAndDecide == 1){
 [p x WDTE  =  OFF        ]
 "17
-[; ;main.c: 17: 
+[; ;main.c: 17:             readAndDecide= 0;
 [p x PWRTE  =  ON        ]
 "18
-[; ;main.c: 18:         while(GO_nDONE);
+[; ;main.c: 18:             executeTens= 1;
 [p x MCLRE  =  OFF       ]
 "19
-[; ;main.c: 19:         reading = ((ADRESH<<8)+ADRESL);
+[; ;main.c: 19:             executeUnits= 0;
 [p x BOREN  =  OFF       ]
 "20
-[; ;main.c: 20:         voltage = (reading * 50) / 1024;
+[; ;main.c: 20: 
 [p x CP  =  OFF          ]
 "21
-[; ;main.c: 21: 
+[; ;main.c: 21:             GO_nDONE= 1;
 [p x CPD  =  OFF          ]
 "24
-[; ;main.c: 24:             executeTens= 1;
+[; ;main.c: 24: 
 [v _counter `Vuc ~T0 @X0 1 e ]
 [i _counter
 -> -> 0 `i `uc
 ]
 "25
-[; ;main.c: 25:             executeUnits= 0;
+[; ;main.c: 25: 
 [v _reading `Vi ~T0 @X0 1 e ]
 [i _reading
 -> 0 `i
 ]
 "26
-[; ;main.c: 26:             if(voltage >= 40){
+[; ;main.c: 26:             voltage = (-20*((reading * 5) / 1024))+75;
 [v _voltage `Vui ~T0 @X0 1 e ]
 [i _voltage
 -> -> 0 `i `ui
 ]
 "27
-[; ;main.c: 27:             tens= 4;
+[; ;main.c: 27: 
 [v _readAndDecide `Vuc ~T0 @X0 1 e ]
 [i _readAndDecide
 -> -> 1 `i `uc
 ]
 "28
-[; ;main.c: 28:             units= voltage - 40;
+[; ;main.c: 28: 
 [v _tens `Vi ~T0 @X0 1 e ]
 [i _tens
 -> 0 `i
 ]
 "29
-[; ;main.c: 29:             }else if(voltage >= 30){
+[; ;main.c: 29:             if(voltage >= 40){
 [v _units `Vi ~T0 @X0 1 e ]
 [i _units
 -> 0 `i
 ]
 "30
-[; ;main.c: 30:                 tens= 3;
+[; ;main.c: 30:                 tens= 4;
 [v _executeTens `Vuc ~T0 @X0 1 e ]
 [i _executeTens
 -> -> 0 `i `uc
 ]
 "31
-[; ;main.c: 31:                 units= voltage - 30;
+[; ;main.c: 31:                 units= voltage - 40;
 [v _executeUnits `Vuc ~T0 @X0 1 e ]
 [i _executeUnits
 -> -> 0 `i `uc
 ]
 [v $root$_isr `(v ~T0 @X0 0 e ]
 "33
-[; ;main.c: 33:                 tens= 2;
+[; ;main.c: 33:                 tens= 3;
 [v _isr `(v ~T1 @X0 1 ef ]
 "34
-[; ;main.c: 34:                 units= voltage - 20;
+[; ;main.c: 34:                 units= voltage - 30;
 {
 [e :U _isr ]
 [f ]
 "35
-[; ;main.c: 35:             }else if(voltage >= 10){
+[; ;main.c: 35:             }else if(voltage >= 20){
 [e ++ _counter -> -> 1 `i `Vuc ]
 "36
-[; ;main.c: 36:                 tens= 1;
-[e $ ! == -> _counter `i -> 2 `i 88  ]
+[; ;main.c: 36:                 tens= 2;
+[e $ ! == -> _counter `i -> 4 `i 88  ]
 {
 "37
-[; ;main.c: 37:                 units= voltage - 10;
+[; ;main.c: 37:                 units= voltage - 20;
 [e = _counter -> -> 0 `i `uc ]
 "39
-[; ;main.c: 39:                 tens= 0;
-[e = _GO_nDONE -> -> 1 `i `b ]
-"41
-[; ;main.c: 41:             }
-[e $U 89  ]
-[e :U 90 ]
-[e :U 89 ]
-[e $ _GO_nDONE 90  ]
-[e :U 91 ]
-"42
-[; ;main.c: 42:             tens= tens * 2;
-[e = _reading + << -> _ADRESH `i -> 8 `i -> _ADRESL `i ]
-"43
-[; ;main.c: 43:             units= units * 2;
-[e = _voltage -> / * _reading -> 50 `i -> 1024 `i `ui ]
-"45
-[; ;main.c: 45: 
-[e $ ! == -> _readAndDecide `i -> 1 `i 92  ]
+[; ;main.c: 39:                 tens= 1;
+[e $ ! == -> _readAndDecide `i -> 1 `i 89  ]
 {
-"46
-[; ;main.c: 46:             GP0= ~GP0;
+"40
+[; ;main.c: 40:                 units= voltage - 10;
 [e = _readAndDecide -> -> 0 `i `uc ]
-"47
-[; ;main.c: 47:             if(tens < 1){
+"41
+[; ;main.c: 41:             }else{
 [e = _executeTens -> -> 1 `i `uc ]
-"48
-[; ;main.c: 48:                 executeTens= 0;
+"42
+[; ;main.c: 42:                 tens= 0;
 [e = _executeUnits -> -> 0 `i `uc ]
+"44
+[; ;main.c: 44:             }
+[e = _GO_nDONE -> -> 1 `i `b ]
+"45
+[; ;main.c: 45:             tens= tens * 2;
+[e $U 90  ]
+[e :U 91 ]
+[e :U 90 ]
+[e $ _GO_nDONE 91  ]
+[e :U 92 ]
+"46
+[; ;main.c: 46:             units= units * 2;
+[e = _reading + << -> _ADRESH `i -> 8 `i -> _ADRESL `i ]
 "49
-[; ;main.c: 49:                 executeUnits= 1;
+[; ;main.c: 49:             GP1= 0;
+[e = _voltage -> + * -U -> 20 `i / * _reading -> 5 `i -> 1024 `i -> 75 `i `ui ]
+"52
+[; ;main.c: 52:             }else{
 [e $ ! >= _voltage -> -> 40 `i `ui 93  ]
 {
-"50
-[; ;main.c: 50:             }
+"53
+[; ;main.c: 53:                 GP0= 1;
 [e = _tens -> 4 `i ]
-"51
-[; ;main.c: 51:             tens--;
+"54
+[; ;main.c: 54:             }
 [e = _units -> - _voltage -> -> 40 `i `ui `i ]
-"52
-[; ;main.c: 52:         }else if(executeUnits == 1){
+"55
+[; ;main.c: 55:             if(tens < 1){
 }
 [e $U 94  ]
 [e :U 93 ]
 [e $ ! >= _voltage -> -> 30 `i `ui 95  ]
 {
-"53
-[; ;main.c: 53: 
+"56
+[; ;main.c: 56:                 executeTens= 0;
 [e = _tens -> 3 `i ]
-"54
-[; ;main.c: 54:             GP1= ~GP1;
+"57
+[; ;main.c: 57:                 executeUnits= 1;
 [e = _units -> - _voltage -> -> 30 `i `ui `i ]
-"55
-[; ;main.c: 55:             if(units < 1){
+"58
+[; ;main.c: 58:             }
 }
 [e $U 96  ]
 [e :U 95 ]
 [e $ ! >= _voltage -> -> 20 `i `ui 97  ]
 {
-"56
-[; ;main.c: 56:                 executeTens= 0;
+"59
+[; ;main.c: 59: 
 [e = _tens -> 2 `i ]
-"57
-[; ;main.c: 57:                 executeUnits= 0;
+"60
+[; ;main.c: 60:         }else if(executeUnits == 1){
 [e = _units -> - _voltage -> -> 20 `i `ui `i ]
-"58
-[; ;main.c: 58:                 readAndDecide= 1;
+"61
+[; ;main.c: 61:             GP0= 0;
 }
 [e $U 98  ]
 [e :U 97 ]
 [e $ ! >= _voltage -> -> 10 `i `ui 99  ]
 {
-"59
-[; ;main.c: 59:             }
+"62
+[; ;main.c: 62:             units--;
 [e = _tens -> 1 `i ]
-"60
-[; ;main.c: 60:             units--;
+"63
+[; ;main.c: 63:             if(GP1){
 [e = _units -> - _voltage -> -> 10 `i `ui `i ]
-"61
-[; ;main.c: 61:         }
+"64
+[; ;main.c: 64:                 GP1= 0;
 }
 [e $U 100  ]
 [e :U 99 ]
 {
-"62
-[; ;main.c: 62: 
+"65
+[; ;main.c: 65:             }else{
 [e = _tens -> 0 `i ]
-"63
-[; ;main.c: 63: 
+"66
+[; ;main.c: 66:                 GP1= 1;
 [e = _units -> _voltage `i ]
-"64
-[; ;main.c: 64: 
+"67
+[; ;main.c: 67:             }
 }
 [e :U 100 ]
 [e :U 98 ]
 [e :U 96 ]
 [e :U 94 ]
-"65
-[; ;main.c: 65: 
+"68
+[; ;main.c: 68:             if(units < 1){
 [e = _tens * _tens -> 2 `i ]
-"66
-[; ;main.c: 66:     }
+"69
+[; ;main.c: 69:                 executeTens= 0;
 [e = _units * _units -> 2 `i ]
-"67
-[; ;main.c: 67: 
+"70
+[; ;main.c: 70:                 executeUnits= 0;
 }
 [e $U 101  ]
-[e :U 92 ]
+[e :U 89 ]
 [e $ ! == -> _executeTens `i -> 1 `i 102  ]
 {
-"69
-[; ;main.c: 69:     TMR0 = 0;
-[e = _GP0 -> ~ -> _GP0 `ui `b ]
-"70
-[; ;main.c: 70: }
-[e $ ! < _tens -> 1 `i 103  ]
-{
 "71
-[; ;main.c: 71: 
-[e = _executeTens -> -> 0 `i `uc ]
+[; ;main.c: 71:                 readAndDecide= 1;
+[e -- _tens -> -> 1 `i `Vi ]
 "72
-[; ;main.c: 72: 
-[e = _executeUnits -> -> 1 `i `uc ]
+[; ;main.c: 72:             }
+[e = _GP1 -> -> 0 `i `b ]
 "73
 [; ;main.c: 73: 
-}
-[e :U 103 ]
+[e $ ! _GP0 103  ]
+{
 "74
-[; ;main.c: 74: void main(void) {
-[e -- _tens -> -> 1 `i `Vi ]
+[; ;main.c: 74:         }
+[e = _GP0 -> -> 0 `i `b ]
 "75
-[; ;main.c: 75:     TRISIO = 0b010100;
+[; ;main.c: 75: 
 }
 [e $U 104  ]
-[e :U 102 ]
-[e $ ! == -> _executeUnits `i -> 1 `i 105  ]
+[e :U 103 ]
 {
+"76
+[; ;main.c: 76: 
+[e = _GP0 -> -> 1 `i `b ]
 "77
-[; ;main.c: 77:     ANSEL = 0b00011100;
-[e = _GP1 -> ~ -> _GP1 `ui `b ]
+[; ;main.c: 77: 
+}
+[e :U 104 ]
 "78
-[; ;main.c: 78:     ADCON0=0b00001001;
-[e $ ! < _units -> 1 `i 106  ]
+[; ;main.c: 78: 
+[e $ ! < _tens -> 1 `i 105  ]
 {
 "79
-[; ;main.c: 79: 
+[; ;main.c: 79:     }
 [e = _executeTens -> -> 0 `i `uc ]
 "80
-[; ;main.c: 80:     ADON=1;
-[e = _executeUnits -> -> 0 `i `uc ]
+[; ;main.c: 80: 
+[e = _executeUnits -> -> 1 `i `uc ]
 "81
-[; ;main.c: 81:     WPU = 0X00;
-[e = _readAndDecide -> -> 1 `i `uc ]
-"82
-[; ;main.c: 82:     TMR0 = 0;
-}
-[e :U 106 ]
-"83
-[; ;main.c: 83:     OSCCAL = 0b11111111;
-[e -- _units -> -> 1 `i `Vi ]
-"84
-[; ;main.c: 84:     OPTION_REG = 0b10000111;
+[; ;main.c: 81:     TMR0IF = 0;
 }
 [e :U 105 ]
-[e :U 104 ]
-[e :U 101 ]
+"83
+[; ;main.c: 83: }
+}
+[e $U 106  ]
+[e :U 102 ]
+[e $ ! == -> _executeUnits `i -> 1 `i 107  ]
+{
+"84
+[; ;main.c: 84: 
+[e = _GP0 -> -> 0 `i `b ]
+"85
+[; ;main.c: 85: 
+[e -- _units -> -> 1 `i `Vi ]
+"86
+[; ;main.c: 86: 
+[e $ ! _GP1 108  ]
+{
+"87
+[; ;main.c: 87: void main(void) {
+[e = _GP1 -> -> 0 `i `b ]
+"88
+[; ;main.c: 88:     TRISIO = 0b010100;
+}
+[e $U 109  ]
+[e :U 108 ]
+{
 "89
-[; ;main.c: 89:     GP1= 1;
+[; ;main.c: 89:     CMCON = 7;
+[e = _GP1 -> -> 1 `i `b ]
+"90
+[; ;main.c: 90:     ANSEL = 0b00011100;
+}
+[e :U 109 ]
+"91
+[; ;main.c: 91:     ADCON0=0b10001001;
+[e $ ! < _units -> 1 `i 110  ]
+{
+"92
+[; ;main.c: 92: 
+[e = _executeTens -> -> 0 `i `uc ]
+"93
+[; ;main.c: 93:     ADON=1;
+[e = _executeUnits -> -> 0 `i `uc ]
+"94
+[; ;main.c: 94:     WPU = 0X00;
+[e = _readAndDecide -> -> 1 `i `uc ]
+"95
+[; ;main.c: 95:     TMR0 = 0;
+}
+[e :U 110 ]
+"97
+[; ;main.c: 97:     OPTION_REG = 0b10000111;
+}
+[e :U 107 ]
+[e :U 106 ]
+[e :U 101 ]
+"102
+[; ;main.c: 102: 
 }
 [e :U 88 ]
-"91
-[; ;main.c: 91:     while(1)
+"104
+[; ;main.c: 104:     while(1)
 [e = _TMR0IF -> -> 0 `i `b ]
-"92
-[; ;main.c: 92:     {
+"105
+[; ;main.c: 105:     {
 [e = _TMR0 -> -> 0 `i `uc ]
-"93
-[; ;main.c: 93: 
+"106
+[; ;main.c: 106: 
 [e :UE 87 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"97
-[; ;main.c: 97: }
+"110
+[; ;main.c: 110: }
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"98
+"111
 [e = _TRISIO -> -> 20 `i `uc ]
-"99
-[e = _CMCON -> -> 7 `i `uc ]
-"100
-[e = _ANSEL -> -> 28 `i `uc ]
-"101
-[e = _ADCON0 -> -> 9 `i `uc ]
-"103
-[e = _ADON -> -> 1 `i `b ]
-"104
-[e = _WPU -> -> 0 `i `uc ]
-"105
-[e = _TMR0 -> -> 0 `i `uc ]
-"106
-[e = _OSCCAL -> -> 255 `i `uc ]
-"107
-[e = _OPTION_REG -> -> 135 `i `uc ]
-"108
-[e = _INTCON -> -> 224 `i `uc ]
 "112
-[e = _GP1 -> -> 1 `i `b ]
+[e = _CMCON -> -> 7 `i `uc ]
+"113
+[e = _ANSEL -> -> 28 `i `uc ]
 "114
-[e :U 109 ]
-"115
-{
+[e = _ADCON0 -> -> 137 `i `uc ]
+"116
+[e = _ADON -> -> 1 `i `b ]
+"117
+[e = _WPU -> -> 0 `i `uc ]
 "118
-}
-[e :U 108 ]
-[e $U 109  ]
-[e :U 110 ]
+[e = _TMR0 -> -> 0 `i `uc ]
+"119
+[e = _OSCCAL -> -> 255 `i `uc ]
 "120
-[e :UE 107 ]
+[e = _OPTION_REG -> -> 135 `i `uc ]
+"121
+[e = _INTCON -> -> 224 `i `uc ]
+"127
+[e :U 113 ]
+"128
+{
+"131
+}
+[e :U 112 ]
+[e $U 113  ]
+[e :U 114 ]
+"133
+[e :UE 111 ]
 }
