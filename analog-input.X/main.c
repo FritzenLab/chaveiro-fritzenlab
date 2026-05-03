@@ -29,7 +29,7 @@ volatile int tens= 0;
 volatile int units= 0;
 volatile uint8_t executeTens= 0;
 volatile uint8_t executeUnits= 0;
-
+volatile long temp_x100= 0;
 void __interrupt() isr()//interrupt vector
 {   
     counter++;
@@ -43,12 +43,28 @@ void __interrupt() isr()//interrupt vector
             
             GO_nDONE= 1;        
             while(GO_nDONE);
-            reading = ((ADRESH<<8)+ADRESL); 
-            // 5V supply temperature equation= (-19.784*V)+75.304
-            // 3V supply temperature equation= (-32.974*V)+75.304
-            voltage = (-20*((reading * 5) / 1024))+75; // if you want to show voltage, substitute 5 by 50
+            /*reading = ((ADRESH<<8)+ADRESL); 
+            // Temperature (°C) = -19.784 * V + 75.304
+            // V = reading * 5.0 / 1024
+            // for 3.3V: Temp = (-32.974 * V) + 75.304
+            // do temp_x100 = (-32974L * reading * 33) / 10240 + 7530; // for 3.3V
+            // So, Temp = (-19.784 * reading * 5 / 1024) + 75.304
+            //temp_x100 = (-19784L * reading * 5) / 1024 + 7530; // for 5V
+            temp_x100 = (-9892L * reading) / 1023 + 7530; // for 3.3V
+            voltage = temp_x100 / 100;*/
             
+            // NTC on top
+            reading = ((ADRESH << 8) + ADRESL); // 0?1023
+            // Step 1: Vadc in millivolts
+            int vadc_mV = (reading * 3300L) / 1023;
+            // Step 2: Calculate NTC resistance
+            int r_ntc = (10000L * (3300L - vadc_mV)) / vadc_mV;
+            // Step 3: Linear temperature approximation (0?50ºC)
+            int temp_x100 = ((48400L - r_ntc) * 100) / 903;
+            // Optional: Convert to °C
+            voltage = (temp_x100 / 100) - 20;
             
+                       
             if(voltage >= 40){
                 tens= 4;
                 units= voltage - 40;

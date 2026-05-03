@@ -4,7 +4,7 @@
 # 288 "<built-in>" 3
 # 1 "<command line>" 1
 # 1 "<built-in>" 2
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\language_support.h" 1 3
+# 1 "D:\\Installations\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
 # 1 "main.c" 2
 
@@ -12,42 +12,42 @@
 
 
 
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\stdio.h" 1 3
+# 1 "D:\\Installations\\pic\\include\\c99\\stdio.h" 1 3
 
 
 
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\musl_xc8.h" 1 3
-# 5 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\stdio.h" 2 3
+# 1 "D:\\Installations\\pic\\include\\c99\\musl_xc8.h" 1 3
+# 5 "D:\\Installations\\pic\\include\\c99\\stdio.h" 2 3
 
 
 
 
 
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\features.h" 1 3
-# 11 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\stdio.h" 2 3
-# 24 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\stdio.h" 3
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\bits/alltypes.h" 1 3
-# 12 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\bits/alltypes.h" 3
+# 1 "D:\\Installations\\pic\\include\\c99\\features.h" 1 3
+# 11 "D:\\Installations\\pic\\include\\c99\\stdio.h" 2 3
+# 24 "D:\\Installations\\pic\\include\\c99\\stdio.h" 3
+# 1 "D:\\Installations\\pic\\include\\c99\\bits/alltypes.h" 1 3
+# 12 "D:\\Installations\\pic\\include\\c99\\bits/alltypes.h" 3
 typedef void * va_list[1];
 
 
 
 
 typedef void * __isoc_va_list[1];
-# 128 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\bits/alltypes.h" 3
+# 128 "D:\\Installations\\pic\\include\\c99\\bits/alltypes.h" 3
 typedef unsigned size_t;
-# 143 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\bits/alltypes.h" 3
+# 143 "D:\\Installations\\pic\\include\\c99\\bits/alltypes.h" 3
 typedef short ssize_t;
-# 174 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\bits/alltypes.h" 3
+# 174 "D:\\Installations\\pic\\include\\c99\\bits/alltypes.h" 3
 typedef __int24 int24_t;
-# 210 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\bits/alltypes.h" 3
+# 210 "D:\\Installations\\pic\\include\\c99\\bits/alltypes.h" 3
 typedef __uint24 uint24_t;
-# 253 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\bits/alltypes.h" 3
+# 253 "D:\\Installations\\pic\\include\\c99\\bits/alltypes.h" 3
 typedef long off_t;
-# 409 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\bits/alltypes.h" 3
+# 409 "D:\\Installations\\pic\\include\\c99\\bits/alltypes.h" 3
 typedef struct _IO_FILE FILE;
-# 25 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\stdio.h" 2 3
-# 52 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\stdio.h" 3
+# 25 "D:\\Installations\\pic\\include\\c99\\stdio.h" 2 3
+# 52 "D:\\Installations\\pic\\include\\c99\\stdio.h" 3
 typedef union _G_fpos64_t {
  char __opaque[16];
  double __align;
@@ -184,12 +184,12 @@ char *ctermid(char *);
 char *tempnam(const char *, const char *);
 # 6 "main.c" 2
 
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\stdlib.h" 1 3
-# 21 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\stdlib.h" 3
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\bits/alltypes.h" 1 3
-# 24 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\bits/alltypes.h" 3
+# 1 "D:\\Installations\\pic\\include\\c99\\stdlib.h" 1 3
+# 21 "D:\\Installations\\pic\\include\\c99\\stdlib.h" 3
+# 1 "D:\\Installations\\pic\\include\\c99\\bits/alltypes.h" 1 3
+# 24 "D:\\Installations\\pic\\include\\c99\\bits/alltypes.h" 3
 typedef long int wchar_t;
-# 22 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\stdlib.h" 2 3
+# 22 "D:\\Installations\\pic\\include\\c99\\stdlib.h" 2 3
 
 int atoi (const char *);
 long atol (const char *);
@@ -213,7 +213,7 @@ unsigned long strtoul (const char *restrict, char **restrict, int);
 
 
 unsigned long __strtoxl(const char * s, char ** endptr, int base, char is_signed);
-# 55 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\stdlib.h" 3
+# 55 "D:\\Installations\\pic\\include\\c99\\stdlib.h" 3
 int rand (void);
 void srand (unsigned);
 
@@ -261,41 +261,41 @@ udiv_t udiv (unsigned int, unsigned int);
 uldiv_t uldiv (unsigned long, unsigned long);
 # 7 "main.c" 2
 
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\xc.h" 1 3
-# 18 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\xc.h" 3
+# 1 "D:\\Installations\\pic\\include\\xc.h" 1 3
+# 18 "D:\\Installations\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
 
 extern double __fpnormalize(double);
 
 
 
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\xc8debug.h" 1 3
-# 12 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\xc8debug.h" 3
+# 1 "D:\\Installations\\pic\\include\\c99\\xc8debug.h" 1 3
+# 12 "D:\\Installations\\pic\\include\\c99\\xc8debug.h" 3
 #pragma intrinsic(__builtin_software_breakpoint)
 extern void __builtin_software_breakpoint(void);
-# 23 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\xc.h" 2 3
+# 23 "D:\\Installations\\pic\\include\\xc.h" 2 3
 
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\builtins.h" 1 3
+# 1 "D:\\Installations\\pic\\include\\builtins.h" 1 3
 
 
 
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\stdint.h" 1 3
-# 26 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\stdint.h" 3
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\bits/alltypes.h" 1 3
-# 133 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\bits/alltypes.h" 3
+# 1 "D:\\Installations\\pic\\include\\c99\\stdint.h" 1 3
+# 26 "D:\\Installations\\pic\\include\\c99\\stdint.h" 3
+# 1 "D:\\Installations\\pic\\include\\c99\\bits/alltypes.h" 1 3
+# 133 "D:\\Installations\\pic\\include\\c99\\bits/alltypes.h" 3
 typedef unsigned short uintptr_t;
-# 148 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\bits/alltypes.h" 3
+# 148 "D:\\Installations\\pic\\include\\c99\\bits/alltypes.h" 3
 typedef short intptr_t;
-# 164 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\bits/alltypes.h" 3
+# 164 "D:\\Installations\\pic\\include\\c99\\bits/alltypes.h" 3
 typedef signed char int8_t;
 
 
 
 
 typedef short int16_t;
-# 179 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\bits/alltypes.h" 3
+# 179 "D:\\Installations\\pic\\include\\c99\\bits/alltypes.h" 3
 typedef long int32_t;
-# 192 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\bits/alltypes.h" 3
+# 192 "D:\\Installations\\pic\\include\\c99\\bits/alltypes.h" 3
 typedef int32_t intmax_t;
 
 
@@ -310,11 +310,11 @@ typedef unsigned char uint8_t;
 
 
 typedef unsigned short uint16_t;
-# 215 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\bits/alltypes.h" 3
+# 215 "D:\\Installations\\pic\\include\\c99\\bits/alltypes.h" 3
 typedef unsigned long uint32_t;
-# 233 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\bits/alltypes.h" 3
+# 233 "D:\\Installations\\pic\\include\\c99\\bits/alltypes.h" 3
 typedef uint32_t uintmax_t;
-# 27 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\stdint.h" 2 3
+# 27 "D:\\Installations\\pic\\include\\c99\\stdint.h" 2 3
 
 typedef int8_t int_fast8_t;
 
@@ -344,25 +344,25 @@ typedef uint24_t uint_least24_t;
 typedef uint24_t uint_fast24_t;
 
 typedef uint32_t uint_least32_t;
-# 148 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\stdint.h" 3
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\bits/stdint.h" 1 3
+# 148 "D:\\Installations\\pic\\include\\c99\\stdint.h" 3
+# 1 "D:\\Installations\\pic\\include\\c99\\bits/stdint.h" 1 3
 typedef int16_t int_fast16_t;
 typedef int32_t int_fast32_t;
 typedef uint16_t uint_fast16_t;
 typedef uint32_t uint_fast32_t;
-# 149 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\stdint.h" 2 3
-# 4 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\builtins.h" 2 3
+# 149 "D:\\Installations\\pic\\include\\c99\\stdint.h" 2 3
+# 4 "D:\\Installations\\pic\\include\\builtins.h" 2 3
 
 
 
 #pragma intrinsic(__nop)
 extern void __nop(void);
-# 19 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\builtins.h" 3
+# 19 "D:\\Installations\\pic\\include\\builtins.h" 3
 #pragma intrinsic(_delay)
 extern __attribute__((nonreentrant)) void _delay(uint32_t);
 #pragma intrinsic(_delaywdt)
 extern __attribute__((nonreentrant)) void _delaywdt(uint32_t);
-# 24 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\xc.h" 2 3
+# 24 "D:\\Installations\\pic\\include\\xc.h" 2 3
 
 
 
@@ -372,12 +372,12 @@ extern __attribute__((nonreentrant)) void _delaywdt(uint32_t);
 
 
 
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\htc.h" 1 3
+# 1 "D:\\Installations\\pic\\include\\htc.h" 1 3
 
 
 
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\xc.h" 1 3
-# 4 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\htc.h" 2 3
+# 1 "D:\\Installations\\pic\\include\\xc.h" 1 3
+# 4 "D:\\Installations\\pic\\include\\htc.h" 2 3
 # 6 "D:/Installations/packs/Microchip/PIC10-12Fxxx_DFP/1.7.178/xc8\\pic\\include\\pic.h" 2 3
 
 
@@ -391,7 +391,7 @@ extern unsigned char __osccal_val(void);
 # 223 "D:/Installations/packs/Microchip/PIC10-12Fxxx_DFP/1.7.178/xc8\\pic\\include\\pic_chip_select.h" 3
 # 1 "D:/Installations/packs/Microchip/PIC10-12Fxxx_DFP/1.7.178/xc8\\pic\\include\\proc\\pic12f675.h" 1 3
 # 44 "D:/Installations/packs/Microchip/PIC10-12Fxxx_DFP/1.7.178/xc8\\pic\\include\\proc\\pic12f675.h" 3
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\__at.h" 1 3
+# 1 "D:\\Installations\\pic\\include\\__at.h" 1 3
 # 45 "D:/Installations/packs/Microchip/PIC10-12Fxxx_DFP/1.7.178/xc8\\pic\\include\\proc\\pic12f675.h" 2 3
 
 
@@ -1330,8 +1330,8 @@ __attribute__((__unsupported__("The " "FLASH_ERASE" " macro function is no longe
 
 
 
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\eeprom_routines.h" 1 3
-# 114 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\eeprom_routines.h" 3
+# 1 "D:\\Installations\\pic\\include\\eeprom_routines.h" 1 3
+# 114 "D:\\Installations\\pic\\include\\eeprom_routines.h" 3
 extern void eeprom_write(unsigned char addr, unsigned char value);
 extern unsigned char eeprom_read(unsigned char addr);
 # 84 "D:/Installations/packs/Microchip/PIC10-12Fxxx_DFP/1.7.178/xc8\\pic\\include\\pic.h" 2 3
@@ -1339,21 +1339,21 @@ extern unsigned char eeprom_read(unsigned char addr);
 extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
-# 28 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\xc.h" 2 3
+# 28 "D:\\Installations\\pic\\include\\xc.h" 2 3
 # 8 "main.c" 2
 
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\math.h" 1 3
-# 15 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\math.h" 3
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\bits/alltypes.h" 1 3
-# 39 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\bits/alltypes.h" 3
+# 1 "D:\\Installations\\pic\\include\\c99\\math.h" 1 3
+# 15 "D:\\Installations\\pic\\include\\c99\\math.h" 3
+# 1 "D:\\Installations\\pic\\include\\c99\\bits/alltypes.h" 1 3
+# 39 "D:\\Installations\\pic\\include\\c99\\bits/alltypes.h" 3
 typedef float float_t;
 
 
 
 
 typedef double double_t;
-# 16 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\math.h" 2 3
-# 42 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\math.h" 3
+# 16 "D:\\Installations\\pic\\include\\c99\\math.h" 2 3
+# 42 "D:\\Installations\\pic\\include\\c99\\math.h" 3
 int __fpclassifyf(float);
 
 
@@ -1363,7 +1363,7 @@ int __fpclassifyf(float);
 
 
 int __signbitf(float);
-# 59 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\math.h" 3
+# 59 "D:\\Installations\\pic\\include\\c99\\math.h" 3
 double acos(double);
 float acosf(float);
 long double acosl(long double);
@@ -1536,7 +1536,7 @@ long double ldexpl(long double, int);
 double lgamma(double);
 float lgammaf(float);
 long double lgammal(long double);
-# 248 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\math.h" 3
+# 248 "D:\\Installations\\pic\\include\\c99\\math.h" 3
 double log(double);
 float logf(float);
 long double logl(long double);
@@ -1606,7 +1606,7 @@ long double nextafterl(long double, long double);
 double nexttoward(double, long double);
 float nexttowardf(float, long double);
 long double nexttowardl(long double, long double);
-# 326 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\math.h" 3
+# 326 "D:\\Installations\\pic\\include\\c99\\math.h" 3
 double pow(double, double);
 __attribute__((nonreentrant)) float powf(float, float);
 long double powl(long double, long double);
@@ -1688,7 +1688,7 @@ long double tgammal(long double);
 double trunc(double);
 float truncf(float);
 long double truncl(long double);
-# 431 "C:\\Program Files\\Microchip\\xc8\\v2.46\\pic\\include\\c99\\math.h" 3
+# 431 "D:\\Installations\\pic\\include\\c99\\math.h" 3
 extern int signgam;
 
 double j0(double);
@@ -1722,7 +1722,7 @@ volatile int tens= 0;
 volatile int units= 0;
 volatile uint8_t executeTens= 0;
 volatile uint8_t executeUnits= 0;
-
+volatile long temp_x100= 0;
 void __attribute__((picinterrupt(("")))) isr()
 {
     counter++;
@@ -1736,10 +1736,16 @@ void __attribute__((picinterrupt(("")))) isr()
 
             GO_nDONE= 1;
             while(GO_nDONE);
-            reading = ((ADRESH<<8)+ADRESL);
+# 57 "main.c"
+            reading = ((ADRESH << 8) + ADRESL);
 
+            int vadc_mV = (reading * 3300L) / 1023;
 
-            voltage = (-20*((reading * 5) / 1024))+75;
+            long r_ntc = (10000L * (3300L - vadc_mV)) / vadc_mV;
+
+            int temp_x100 = ((48400L - r_ntc) * 100) / 903;
+
+            voltage = (temp_x100 / 100) - 20;
 
 
             if(voltage >= 40){

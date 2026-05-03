@@ -168,328 +168,340 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 21:             GO_nDONE= 1;
 [p x CPD  =  OFF          ]
 "24
-[; ;main.c: 24: 
 [v _counter `Vuc ~T0 @X0 1 e ]
 [i _counter
 -> -> 0 `i `uc
 ]
 "25
-[; ;main.c: 25: 
 [v _reading `Vi ~T0 @X0 1 e ]
 [i _reading
 -> 0 `i
 ]
 "26
-[; ;main.c: 26:             voltage = (-20*((reading * 5) / 1024))+75;
 [v _voltage `Vui ~T0 @X0 1 e ]
 [i _voltage
 -> -> 0 `i `ui
 ]
 "27
-[; ;main.c: 27: 
 [v _readAndDecide `Vuc ~T0 @X0 1 e ]
 [i _readAndDecide
 -> -> 1 `i `uc
 ]
 "28
-[; ;main.c: 28: 
 [v _tens `Vi ~T0 @X0 1 e ]
 [i _tens
 -> 0 `i
 ]
 "29
-[; ;main.c: 29:             if(voltage >= 40){
 [v _units `Vi ~T0 @X0 1 e ]
 [i _units
 -> 0 `i
 ]
 "30
-[; ;main.c: 30:                 tens= 4;
 [v _executeTens `Vuc ~T0 @X0 1 e ]
 [i _executeTens
 -> -> 0 `i `uc
 ]
 "31
-[; ;main.c: 31:                 units= voltage - 40;
 [v _executeUnits `Vuc ~T0 @X0 1 e ]
 [i _executeUnits
 -> -> 0 `i `uc
 ]
+"32
+[v _temp_x100 `Vl ~T0 @X0 1 e ]
+[i _temp_x100
+-> -> 0 `i `l
+]
 [v $root$_isr `(v ~T0 @X0 0 e ]
 "33
-[; ;main.c: 33:                 tens= 3;
 [v _isr `(v ~T1 @X0 1 ef ]
 "34
-[; ;main.c: 34:                 units= voltage - 30;
 {
 [e :U _isr ]
 [f ]
 "35
-[; ;main.c: 35:             }else if(voltage >= 20){
 [e ++ _counter -> -> 1 `i `Vuc ]
 "36
-[; ;main.c: 36:                 tens= 2;
 [e $ ! == -> _counter `i -> 4 `i 88  ]
 {
 "37
-[; ;main.c: 37:                 units= voltage - 20;
 [e = _counter -> -> 0 `i `uc ]
 "39
-[; ;main.c: 39:                 tens= 1;
 [e $ ! == -> _readAndDecide `i -> 1 `i 89  ]
 {
 "40
-[; ;main.c: 40:                 units= voltage - 10;
 [e = _readAndDecide -> -> 0 `i `uc ]
 "41
-[; ;main.c: 41:             }else{
 [e = _executeTens -> -> 1 `i `uc ]
 "42
-[; ;main.c: 42:                 tens= 0;
 [e = _executeUnits -> -> 0 `i `uc ]
 "44
-[; ;main.c: 44:             }
 [e = _GO_nDONE -> -> 1 `i `b ]
 "45
-[; ;main.c: 45:             tens= tens * 2;
 [e $U 90  ]
 [e :U 91 ]
 [e :U 90 ]
 [e $ _GO_nDONE 91  ]
 [e :U 92 ]
-"46
-[; ;main.c: 46:             units= units * 2;
+"57
+[; ;main.c: 57:             reading = ((ADRESH << 8) + ADRESL);
 [e = _reading + << -> _ADRESH `i -> 8 `i -> _ADRESL `i ]
-"49
-[; ;main.c: 49:             GP1= 0;
-[e = _voltage -> + * -U -> 20 `i / * _reading -> 5 `i -> 1024 `i -> 75 `i `ui ]
-"52
-[; ;main.c: 52:             }else{
+"59
+[; ;main.c: 59:             int vadc_mV = (reading * 3300L) / 1023;
+[v _vadc_mV `i ~T0 @X0 1 a ]
+[e = _vadc_mV -> / * -> _reading `l -> 3300 `l -> -> 1023 `i `l `i ]
+"61
+[; ;main.c: 61:             long r_ntc = (10000L * (3300L - vadc_mV)) / vadc_mV;
+[v _r_ntc `l ~T0 @X0 1 a ]
+[e = _r_ntc / * -> 10000 `l - -> 3300 `l -> _vadc_mV `l -> _vadc_mV `l ]
+"63
+[; ;main.c: 63:             int temp_x100 = ((48400L - r_ntc) * 100) / 903;
+[v _temp_x100 `i ~T0 @X0 1 a ]
+[e = _temp_x100 -> / * - -> 48400 `l _r_ntc -> -> 100 `i `l -> -> 903 `i `l `i ]
+"65
+[; ;main.c: 65:             voltage = (temp_x100 / 100) - 20;
+[e = _voltage -> - / _temp_x100 -> 100 `i -> 20 `i `ui ]
+"68
+[; ;main.c: 68:             if(voltage >= 40){
 [e $ ! >= _voltage -> -> 40 `i `ui 93  ]
 {
-"53
-[; ;main.c: 53:                 GP0= 1;
+"69
+[; ;main.c: 69:                 tens= 4;
 [e = _tens -> 4 `i ]
-"54
-[; ;main.c: 54:             }
+"70
+[; ;main.c: 70:                 units= voltage - 40;
 [e = _units -> - _voltage -> -> 40 `i `ui `i ]
-"55
-[; ;main.c: 55:             if(tens < 1){
+"71
+[; ;main.c: 71:             }else if(voltage >= 30){
 }
 [e $U 94  ]
 [e :U 93 ]
 [e $ ! >= _voltage -> -> 30 `i `ui 95  ]
 {
-"56
-[; ;main.c: 56:                 executeTens= 0;
+"72
+[; ;main.c: 72:                 tens= 3;
 [e = _tens -> 3 `i ]
-"57
-[; ;main.c: 57:                 executeUnits= 1;
+"73
+[; ;main.c: 73:                 units= voltage - 30;
 [e = _units -> - _voltage -> -> 30 `i `ui `i ]
-"58
-[; ;main.c: 58:             }
+"74
+[; ;main.c: 74:             }else if(voltage >= 20){
 }
 [e $U 96  ]
 [e :U 95 ]
 [e $ ! >= _voltage -> -> 20 `i `ui 97  ]
 {
-"59
-[; ;main.c: 59: 
+"75
+[; ;main.c: 75:                 tens= 2;
 [e = _tens -> 2 `i ]
-"60
-[; ;main.c: 60:         }else if(executeUnits == 1){
+"76
+[; ;main.c: 76:                 units= voltage - 20;
 [e = _units -> - _voltage -> -> 20 `i `ui `i ]
-"61
-[; ;main.c: 61:             GP0= 0;
+"77
+[; ;main.c: 77:             }else if(voltage >= 10){
 }
 [e $U 98  ]
 [e :U 97 ]
 [e $ ! >= _voltage -> -> 10 `i `ui 99  ]
 {
-"62
-[; ;main.c: 62:             units--;
+"78
+[; ;main.c: 78:                 tens= 1;
 [e = _tens -> 1 `i ]
-"63
-[; ;main.c: 63:             if(GP1){
+"79
+[; ;main.c: 79:                 units= voltage - 10;
 [e = _units -> - _voltage -> -> 10 `i `ui `i ]
-"64
-[; ;main.c: 64:                 GP1= 0;
+"80
+[; ;main.c: 80:             }else{
 }
 [e $U 100  ]
 [e :U 99 ]
 {
-"65
-[; ;main.c: 65:             }else{
+"81
+[; ;main.c: 81:                 tens= 0;
 [e = _tens -> 0 `i ]
-"66
-[; ;main.c: 66:                 GP1= 1;
+"82
+[; ;main.c: 82:                 units= voltage;
 [e = _units -> _voltage `i ]
-"67
-[; ;main.c: 67:             }
+"83
+[; ;main.c: 83:             }
 }
 [e :U 100 ]
 [e :U 98 ]
 [e :U 96 ]
 [e :U 94 ]
-"68
-[; ;main.c: 68:             if(units < 1){
+"84
+[; ;main.c: 84:             tens= tens * 2;
 [e = _tens * _tens -> 2 `i ]
-"69
-[; ;main.c: 69:                 executeTens= 0;
+"85
+[; ;main.c: 85:             units= units * 2;
 [e = _units * _units -> 2 `i ]
-"70
-[; ;main.c: 70:                 executeUnits= 0;
+"86
+[; ;main.c: 86:         }else if(executeTens == 1){
 }
 [e $U 101  ]
 [e :U 89 ]
 [e $ ! == -> _executeTens `i -> 1 `i 102  ]
 {
-"71
-[; ;main.c: 71:                 readAndDecide= 1;
+"87
+[; ;main.c: 87:             tens--;
 [e -- _tens -> -> 1 `i `Vi ]
-"72
-[; ;main.c: 72:             }
+"88
+[; ;main.c: 88:             GP1= 0;
 [e = _GP1 -> -> 0 `i `b ]
-"73
-[; ;main.c: 73: 
+"89
+[; ;main.c: 89:             if(GP0){
 [e $ ! _GP0 103  ]
 {
-"74
-[; ;main.c: 74:         }
+"90
+[; ;main.c: 90:                 GP0= 0;
 [e = _GP0 -> -> 0 `i `b ]
-"75
-[; ;main.c: 75: 
+"91
+[; ;main.c: 91:             }else{
 }
 [e $U 104  ]
 [e :U 103 ]
 {
-"76
-[; ;main.c: 76: 
+"92
+[; ;main.c: 92:                 GP0= 1;
 [e = _GP0 -> -> 1 `i `b ]
-"77
-[; ;main.c: 77: 
+"93
+[; ;main.c: 93:             }
 }
 [e :U 104 ]
-"78
-[; ;main.c: 78: 
+"94
+[; ;main.c: 94:             if(tens < 1){
 [e $ ! < _tens -> 1 `i 105  ]
 {
-"79
-[; ;main.c: 79:     }
+"95
+[; ;main.c: 95:                 executeTens= 0;
 [e = _executeTens -> -> 0 `i `uc ]
-"80
-[; ;main.c: 80: 
+"96
+[; ;main.c: 96:                 executeUnits= 1;
 [e = _executeUnits -> -> 1 `i `uc ]
-"81
-[; ;main.c: 81:     TMR0IF = 0;
+"97
+[; ;main.c: 97:             }
 }
 [e :U 105 ]
-"83
-[; ;main.c: 83: }
+"99
+[; ;main.c: 99:         }else if(executeUnits == 1){
 }
 [e $U 106  ]
 [e :U 102 ]
 [e $ ! == -> _executeUnits `i -> 1 `i 107  ]
 {
-"84
-[; ;main.c: 84: 
+"100
+[; ;main.c: 100:             GP0= 0;
 [e = _GP0 -> -> 0 `i `b ]
-"85
-[; ;main.c: 85: 
+"101
+[; ;main.c: 101:             units--;
 [e -- _units -> -> 1 `i `Vi ]
-"86
-[; ;main.c: 86: 
+"102
+[; ;main.c: 102:             if(GP1){
 [e $ ! _GP1 108  ]
 {
-"87
-[; ;main.c: 87: void main(void) {
+"103
+[; ;main.c: 103:                 GP1= 0;
 [e = _GP1 -> -> 0 `i `b ]
-"88
-[; ;main.c: 88:     TRISIO = 0b010100;
+"104
+[; ;main.c: 104:             }else{
 }
 [e $U 109  ]
 [e :U 108 ]
 {
-"89
-[; ;main.c: 89:     CMCON = 7;
+"105
+[; ;main.c: 105:                 GP1= 1;
 [e = _GP1 -> -> 1 `i `b ]
-"90
-[; ;main.c: 90:     ANSEL = 0b00011100;
+"106
+[; ;main.c: 106:             }
 }
 [e :U 109 ]
-"91
-[; ;main.c: 91:     ADCON0=0b10001001;
+"107
+[; ;main.c: 107:             if(units < 1){
 [e $ ! < _units -> 1 `i 110  ]
 {
-"92
-[; ;main.c: 92: 
+"108
+[; ;main.c: 108:                 executeTens= 0;
 [e = _executeTens -> -> 0 `i `uc ]
-"93
-[; ;main.c: 93:     ADON=1;
+"109
+[; ;main.c: 109:                 executeUnits= 0;
 [e = _executeUnits -> -> 0 `i `uc ]
-"94
-[; ;main.c: 94:     WPU = 0X00;
+"110
+[; ;main.c: 110:                 readAndDecide= 1;
 [e = _readAndDecide -> -> 1 `i `uc ]
-"95
-[; ;main.c: 95:     TMR0 = 0;
+"111
+[; ;main.c: 111:             }
 }
 [e :U 110 ]
-"97
-[; ;main.c: 97:     OPTION_REG = 0b10000111;
+"113
+[; ;main.c: 113:         }
 }
 [e :U 107 ]
 [e :U 106 ]
 [e :U 101 ]
-"102
-[; ;main.c: 102: 
+"118
+[; ;main.c: 118:     }
 }
 [e :U 88 ]
-"104
-[; ;main.c: 104:     while(1)
+"120
+[; ;main.c: 120:     TMR0IF = 0;
 [e = _TMR0IF -> -> 0 `i `b ]
-"105
-[; ;main.c: 105:     {
+"121
+[; ;main.c: 121:     TMR0 = 0;
 [e = _TMR0 -> -> 0 `i `uc ]
-"106
-[; ;main.c: 106: 
+"122
+[; ;main.c: 122: }
 [e :UE 87 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"110
-[; ;main.c: 110: }
+"126
+[; ;main.c: 126: void main(void) {
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"111
-[e = _TRISIO -> -> 20 `i `uc ]
-"112
-[e = _CMCON -> -> 7 `i `uc ]
-"113
-[e = _ANSEL -> -> 28 `i `uc ]
-"114
-[e = _ADCON0 -> -> 137 `i `uc ]
-"116
-[e = _ADON -> -> 1 `i `b ]
-"117
-[e = _WPU -> -> 0 `i `uc ]
-"118
-[e = _TMR0 -> -> 0 `i `uc ]
-"119
-[e = _OSCCAL -> -> 255 `i `uc ]
-"120
-[e = _OPTION_REG -> -> 135 `i `uc ]
-"121
-[e = _INTCON -> -> 224 `i `uc ]
 "127
-[e :U 113 ]
+[; ;main.c: 127:     TRISIO = 0b010100;
+[e = _TRISIO -> -> 20 `i `uc ]
 "128
+[; ;main.c: 128:     CMCON = 7;
+[e = _CMCON -> -> 7 `i `uc ]
+"129
+[; ;main.c: 129:     ANSEL = 0b00011100;
+[e = _ANSEL -> -> 28 `i `uc ]
+"130
+[; ;main.c: 130:     ADCON0=0b10001001;
+[e = _ADCON0 -> -> 137 `i `uc ]
+"132
+[; ;main.c: 132:     ADON=1;
+[e = _ADON -> -> 1 `i `b ]
+"133
+[; ;main.c: 133:     WPU = 0X00;
+[e = _WPU -> -> 0 `i `uc ]
+"134
+[; ;main.c: 134:     TMR0 = 0;
+[e = _TMR0 -> -> 0 `i `uc ]
+"135
+[; ;main.c: 135:     OSCCAL = 0b11111111;
+[e = _OSCCAL -> -> 255 `i `uc ]
+"136
+[; ;main.c: 136:     OPTION_REG = 0b10000111;
+[e = _OPTION_REG -> -> 135 `i `uc ]
+"137
+[; ;main.c: 137:     INTCON = 0b11100000;
+[e = _INTCON -> -> 224 `i `uc ]
+"143
+[; ;main.c: 143:     while(1)
+[e :U 113 ]
+"144
+[; ;main.c: 144:     {
 {
-"131
+"147
+[; ;main.c: 147:     }
 }
 [e :U 112 ]
 [e $U 113  ]
 [e :U 114 ]
-"133
+"149
+[; ;main.c: 149: }
 [e :UE 111 ]
 }
